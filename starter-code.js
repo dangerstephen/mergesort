@@ -1,33 +1,38 @@
 function mergeSort(arr) {
-  // if the array is length one or zero, return the array
+  var length = (arr.length-1),
+        mid    = Math.round(length/2),
+        left   = arr.slice(0, mid),
+        right  = arr.slice(mid, length);
 
-  // figure out the middle point
-
-  // create an array of the left half
-
-  // create an array of right half
-
-  // call merge on a recursively called left half and right half
+    if(length < 2) {
+      return arr;
+    }
+  
+  return merge(mergeSort(left), mergeSort(right));
   
 }
 
 
 function merge(left, right) {
   //variable to hold result
-
-  // while both arrays have elements in them, zip them together
-
-    // if the left array first element is less than the right array first element, push to result
-
-
-    // else push the right array first element to result
-
-
-  // if left is the only array with elements, push them all in
-
-  // if right is the only array with elmeents, push them all in
-
-
-  // return final result
+  var myResults = []; 
+ 
+    while (left.length && right.length) {
+        if (left[0] <= right[0]) {
+            result.push(left.shift());
+        } else {
+            myResult.push(right.shift());
+        }
+    }
+ 
+    while (left.length)
+        myResult.push(left.shift());
+ 
+    while (right.length)
+        myResult.push(right.shift());
+ 
+   
+  
+  return myResults; 
 
 }
